@@ -24,9 +24,10 @@ import marca
 import storage
 
 PASTA = os.path.dirname(__file__)
+_icone = os.path.join(PASTA, "assets", "icone.png")
 st.set_page_config(
     page_title="Mel Prazer · Jardim do Éden",
-    page_icon=Image.open(os.path.join(PASTA, "assets", "icone.png")),
+    page_icon=Image.open(_icone) if os.path.exists(_icone) else "🍯",  # o app abre mesmo sem a pasta assets
     layout="centered",
 )
 
